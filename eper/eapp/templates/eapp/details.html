@@ -1,0 +1,20 @@
+{% extends 'eapp/base.html' %}
+{% load bootstrap3 %}
+{% block body%}
+<h2 style="text-align:center;">
+<em >  Details:</em>
+</h2>
+<h3>Name:{{usname.user.username}}</h3>
+<h3>Email:{{usname.user.email}}</h3>
+<h3>First Name:{{usname.user.first_name}}</h3>
+<form  method="post">
+  {% csrf_token %}
+  {% bootstrap_form form %}
+
+  <input type="submit" class="btn btn-outline-primary btn-block" value="Approve">
+
+</form>
+<br>
+<a href="/del/{{pk}}/" class="btn btn-danger btn-block">Delete Request</a>
+
+{% endblock %}

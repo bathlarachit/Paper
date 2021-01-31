@@ -1,0 +1,12 @@
+{% extends 'eapp/base.html' %}
+{% load bootstrap3 %}
+{% block body %}
+<h3>
+  <em>Add New  question here</em>
+</h3>
+<form  method="post">
+  {% csrf_token %}
+  {% bootstrap_form form %}
+  <input class="btn btn-block btn-success"type="submit" name="" value="ADD">
+</form>
+{% endblock %}
